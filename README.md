@@ -1,6 +1,9 @@
 # AircraftsFinder
 This project is used to recognize flying aircraft from Landsat data. This is the first time that aircrafts can be identified from an image with resolution no more than 30 m.
 
+![alt text](https://github.com/xialang2012/AircraftsFinder/blob/master/global%20aircrafts.jpg)
+
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
