@@ -10,7 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-To maximum reducation dependences, we re-write the some digital image pocessing methods, e.g. Sobel filter, Laplance filter, in the project, which often get from OpenCV. Hence, the only dependence you need is GDAL and it is used to read GeoTIFF data and create vector file. What's more, the version of GDAL should be large than 2.0. You can install it under Ubuntu 16.04 like this. 
+To maximum reducation dependences, we re-write some digital image pocessing methods in the project, e.g. Sobel filter, Laplance filter, which often get from OpenCV. Hence, the only dependence you need is GDAL and it is used to read GeoTIFF data and create vector file. What's more, the version of GDAL should be large than 2.0. You can install it under Ubuntu 16.04 like this. 
 
 ```
 wget http://download.osgeo.org/gdal/2.1.0/gdal-2.1.0.tar.gz
