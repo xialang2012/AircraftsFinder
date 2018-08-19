@@ -129,4 +129,21 @@ int FilePathTools::GetFilesFromDir(const std::string inPath, std::vector<std::st
 	return 0;
 }
 
+bool FilePathTools::isFileExist(const std::string & inFile)
+{
+
+#ifdef WIN32
+	if ((_access(inFile.c_str(), 0)) == -1)
+	{
+		return false;
+	}
+#elif linux
+	if ((access(inFile.c_str(), 0)) == -1)
+	{
+		return false;
+	}
+#endif
+
+	return true;
+}
 

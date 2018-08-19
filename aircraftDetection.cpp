@@ -90,6 +90,22 @@ int processOneSwath(std::ofstream &outf, const std::string &inFile, CreateLineSh
 		{
 			std::cout << "2.1 micro-meter enhance..." << std::endl;
 			std::string channel21File = inPath21 + "/" + pathTool.GetFileNameNoSuiffix(inFile).substr(0, pathTool.GetFileNameNoSuiffix(inFile).length() - 1) + "7.tif";
+			if (pathTool.isFileExist(channel21File))
+			{
+				double vapor = getCenterPointVapor(inPathVapor, dataInfo138);
+				std::cout << vapor << std::endl;
+				if (vapor < 0.8)
+				{
+					OLIData<UINT16> dataInfo21(channel21File);
+					dataInfo21.openBandData();
+					enhanceBy21Channel<UINT16>(finalAircraftsIndex, rows, cols, dataInfo21, finalAircraft);
+				}
+			}
+			else
+			{
+				std::cout << "warning: no matched file for " << pathTool.GetFileName(inFile) << std::endl;
+			}
+/*
 #ifdef WIN32
 			if ((_access(channel21File.c_str(), 0)) != -1)
 			{
@@ -122,9 +138,9 @@ int processOneSwath(std::ofstream &outf, const std::string &inFile, CreateLineSh
 			{
 				std::cout << "warning: no matched file for " << pathTool.GetFileName(inFile) << std::endl;
 			}
-#endif
+#endif*/
 		}
-
+		
 		// create shp file for the aircrafts
 		std::vector<double> lons, lats;
 		OGRSpatialReference *oSRS = new OGRSpatialReference();

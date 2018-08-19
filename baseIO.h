@@ -456,6 +456,9 @@ public:
 
 	void replaceAll(std::string& str, const std::string& old_value, const std::string& new_value);
 
+	// if the file is exist on the disk
+	bool isFileExist(const std::string &);
+
 	~FilePathTools() = default;
 
 private:
