@@ -40,7 +40,7 @@ cmake .
 make
 ```
 
-## Running the tests
+## Running the test
 
 For example, if you want to detect aircrafts from Mar. 31, 2013 to Apr. 31, 2013:
 
